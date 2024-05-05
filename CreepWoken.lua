@@ -1,4 +1,4 @@
-if game.GameId == 1359573625 and _G.creepin then
+if game.GameId == 1359573625 and getgenv().creepin then
 	task.wait(1.5)
 	local Player = game:GetService("Players").LocalPlayer
 	local TweenService = game:GetService("TweenService")
