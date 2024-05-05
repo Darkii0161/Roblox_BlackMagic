@@ -9,6 +9,24 @@ if game.GameId == 1359573625 and _G.creepin then
 	Player:WaitForChild("PlayerGui")
 	repeat task.wait()
 	until Player.PlayerGui:FindFirstChild("LoadingGui")
+	if not isfolder("CreepWoken") then
+		game:GetService("StarterGui"):SetCore("SendNotification",{
+			Title = "Failed to find CreepWoken files.",
+			Text = "(Ensure that all files are set up accordingly.)",
+			Duration = 5
+		})
+		return
+	end
+
+	if not isfile("CreepWoken/dontleave.rbxm") then
+		game:GetService("StarterGui"):SetCore("SendNotification",{
+			Title = "Failed to find CreepWoken files.",
+			Text = "(Ensure that all files are set up accordingly.)",
+			Duration = 5
+		})
+		return
+	end
+	print("Found CreepWoken Files")
 	local menuGui = Player.PlayerGui.LoadingGui
 	local Overlay = menuGui:WaitForChild("Overlay")
 	local loadingScript = menuGui:WaitForChild("LoadingGui")
