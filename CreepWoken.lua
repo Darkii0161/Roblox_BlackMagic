@@ -183,9 +183,9 @@ if game.GameId == 1359573625 and getgenv().creepin then
 									scaryVoice.TimePosition = 0.2
 									scaryVoice.Volume = 3.8
 									scaryVoice:Play()
-									typeText(scaryText,nil,"DON'T ",0.2)
-									task.wait(0.35)
-									typeText(scaryText,"DON'T ","LEAVE",0.2)
+									typeText(scaryText,nil,"DON'T ",0.18)
+									task.wait(0.3)
+									typeText(scaryText,"DON'T ","LEAVE",0.18)
 									task.wait(0.8)
 									Tween(scaryText,Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 1, {
 										TextTransparency = 1
