@@ -18,7 +18,7 @@ if game.GameId == 1359573625 and getgenv().creepin then
 		return
 	end
 
-	if not isfile("CreepWoken/dontleave.rbxm") then
+	if not isfile("CreepWoken/dontleave.mp3") then
 		game:GetService("StarterGui"):SetCore("SendNotification",{
 			Title = "Failed to find CreepWoken files.",
 			Text = "(Ensure that all files are set up accordingly.)",
@@ -134,7 +134,7 @@ if game.GameId == 1359573625 and getgenv().creepin then
 					if child:IsA("TextButton") and child:FindFirstChild("CharacterName") then
 						child.MouseButton1Click:Connect(function()
 							if not alreadyScared then
-								local scaryPrompt = math.random(1, 15)
+								local scaryPrompt = math.random(1, 12)
 								if scaryPrompt == 1 then
 									alreadyScared = true
 									local isScaring = true
@@ -178,10 +178,10 @@ if game.GameId == 1359573625 and getgenv().creepin then
 									local scaryVoice = Instance.new("Sound")
 									scaryVoice.Name = "ScaryVoice"
 									scaryVoice.Parent = Overlay
-									scaryVoice.SoundId = "rbxassetid://17375093036"
+									scaryVoice.SoundId = getcustomasset("CreepWoken/dontleave.mp3", false)
 									scaryVoice.Looped = false
 									scaryVoice.TimePosition = 0.2
-									scaryVoice.Volume = 1.2
+									scaryVoice.Volume = 3.8
 									scaryVoice:Play()
 									typeText(scaryText,nil,"DON'T ",0.2)
 									task.wait(0.35)
