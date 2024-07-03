@@ -1,4 +1,4 @@
-if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"krampus") then
+if getgenv().friendOn and (string.find(string.lower(identifyexecutor()),"krampus") or string.find(string.lower(identifyexecutor()),"wave")) then
 	if getgenv().alreadyActive == true then
 		return
 	else
