@@ -1,5 +1,5 @@
-if getgenv().friendOn and (string.find(string.lower(identifyexecutor()),"krampus") or string.find(string.lower(identifyexecutor()),"wave")) then
-	if getgenv().alreadyActive == true then
+if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") then
+	if getgenv().notalreadyActive == false then
 		return
 	else
 		if not isfolder("FriendlyCompanion") then
@@ -10,7 +10,7 @@ if getgenv().friendOn and (string.find(string.lower(identifyexecutor()),"krampus
 			})
 			return
 		end
-		getgenv().alreadyActive = true
+		getgenv().notalreadyActive = false
 	end
 	task.wait(3)
 	local Player = game:GetService("Players").LocalPlayer
@@ -313,4 +313,5 @@ if getgenv().friendOn and (string.find(string.lower(identifyexecutor()),"krampus
 			friendActivate(Character)
 		end
 	end)
+	print("Check:FC")
 end
