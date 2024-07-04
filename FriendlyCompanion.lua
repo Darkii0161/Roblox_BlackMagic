@@ -1,18 +1,17 @@
-if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") and (getgenv().fcalreadyActive == false or getgenv().fcalreadyActive == nil) then
-	getgenv().fcalreadyActive = false
-	if getgenv().fcalreadyActive == true then
+if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") and not game:GetService("CoreGui"):FindFirstChild("FCAlreadyActive") then
+	if not isfolder("FriendlyCompanion") then
+		game:GetService("StarterGui"):SetCore("SendNotification",{
+			Title = "Failed to find FriendlyCompanion files.",
+			Text = "(Ensure that all files are set up accordingly.)",
+			Duration = 5
+		})
 		return
-	else
-		if not isfolder("FriendlyCompanion") then
-			game:GetService("StarterGui"):SetCore("SendNotification",{
-				Title = "Failed to find FriendlyCompanion files.",
-				Text = "(Ensure that all files are set up accordingly.)",
-				Duration = 5
-			})
-			return
-		end
-		getgenv().fcalreadyActive = true
 	end
+	print("Starting :FC")
+	local fcalreadyActive = Instance.new("ScreenGui")
+	fcalreadyActive.Name = "FCAlreadyActive"
+	fcalreadyActive.Parent = game:GetService("CoreGui")
+	fcalreadyActive.Enabled = false
 	task.wait(3)
 	local Player = game:GetService("Players").LocalPlayer
 	local TweenService = game:GetService("TweenService")
