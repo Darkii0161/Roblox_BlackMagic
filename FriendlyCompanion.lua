@@ -1,7 +1,9 @@
 if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") and not game:GetService("CoreGui"):FindFirstChild("FCAlreadyActive") then
+	task.wait(1.5)
 	if not game:IsLoaded() then
 		game.Loaded:Wait()
 	end
+	local Player = game:GetService("Players").LocalPlayer
 	Player:WaitForChild("PlayerGui")
 	if not isfolder("FriendlyCompanion") then
 		game:GetService("StarterGui"):SetCore("SendNotification",{
@@ -17,7 +19,6 @@ if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") a
 	fcalreadyActive.Parent = game:GetService("CoreGui")
 	fcalreadyActive.Enabled = false
 	task.wait(3)
-	local Player = game:GetService("Players").LocalPlayer
 	local TweenService = game:GetService("TweenService")
 	
 	local friendSummoning = false
