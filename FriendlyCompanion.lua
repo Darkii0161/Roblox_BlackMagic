@@ -1,5 +1,6 @@
-if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") then
-	if getgenv().notalreadyActive == false then
+if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") and (getgenv().fcalreadyActive == false or getgenv().fcalreadyActive == nil) then
+	getgenv().fcalreadyActive = false
+	if getgenv().fcalreadyActive == true then
 		return
 	else
 		if not isfolder("FriendlyCompanion") then
@@ -10,7 +11,7 @@ if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") t
 			})
 			return
 		end
-		getgenv().notalreadyActive = false
+		getgenv().fcalreadyActive = true
 	end
 	task.wait(3)
 	local Player = game:GetService("Players").LocalPlayer
