@@ -1,4 +1,8 @@
 if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") and not game:GetService("CoreGui"):FindFirstChild("FCAlreadyActive") then
+	if not game:IsLoaded() then
+		game.Loaded:Wait()
+	end
+	Player:WaitForChild("PlayerGui")
 	if not isfolder("FriendlyCompanion") then
 		game:GetService("StarterGui"):SetCore("SendNotification",{
 			Title = "Failed to find FriendlyCompanion files.",
