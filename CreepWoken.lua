@@ -7,6 +7,7 @@ if game.GameId == 1359573625 and getgenv().creepin then
 		game.Loaded:Wait()
 	end
 	Player:WaitForChild("PlayerGui")
+	print("Starting :CW")
 	repeat task.wait()
 	until Player.PlayerGui:FindFirstChild("LoadingGui")
 	task.wait(0.5)
