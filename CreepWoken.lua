@@ -1,5 +1,4 @@
 task.wait(1)
-print("CW Active")
 if game.GameId == 1359573625 and getgenv().creepin then
 	task.wait(1.5)
 	local Player = game:GetService("Players").LocalPlayer
@@ -12,7 +11,6 @@ if game.GameId == 1359573625 and getgenv().creepin then
 	print("Starting :CW")
 	repeat task.wait()
 	until Player.PlayerGui:FindFirstChild("LoadingGui")
-	task.wait(0.5)
 	if not isfolder("CreepWoken") then
 		game:GetService("StarterGui"):SetCore("SendNotification",{
 			Title = "Failed to find CreepWoken files.",
