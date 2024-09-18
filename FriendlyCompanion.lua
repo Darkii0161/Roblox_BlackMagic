@@ -1,4 +1,4 @@
-if getgenv().friendOn and string.find(string.lower(identifyexecutor()),"wave") and not game:GetService("CoreGui"):FindFirstChild("FCAlreadyActive") then
+if getgenv().friendOn and (string.find(string.lower(identifyexecutor()),"wave") or string.find(string.lower(identifyexecutor()),"solara")) and not game:GetService("CoreGui"):FindFirstChild("FCAlreadyActive") then
 	task.wait(1.5)
 	if not game:IsLoaded() then
 		game.Loaded:Wait()
